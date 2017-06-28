@@ -1,0 +1,22 @@
+$textColor: red;
+
+.new {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  & span {
+    font-size: 16px;
+    font-weight: bold;
+    color: color($textColor tint(50%));
+  }
+}
+
+.an {
+  @extend .new;
+  height: 50px;
+  background-color: blue;
+}

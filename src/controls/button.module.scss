@@ -1,0 +1,7 @@
+.btn {
+  background-color: maroon;
+  font-size: 16px;
+  @media (max-width: 400px), (min-device-pixel-ratio: 1.25) {
+		font-size: 12px;
+	}
+}
