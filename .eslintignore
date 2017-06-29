@@ -1,0 +1,3 @@
+src/static/*
+src/build/*
+/node_modules/*

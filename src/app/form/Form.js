@@ -1,5 +1,5 @@
-import { PureComponent } from 'react';
-import { connect } from 'react-redux';
+import { PureComponent } from 'react'
+import { connect } from 'react-redux'
 
 import { onSend, changeText, reset, stop } from 'app/otherReducerShit'
 
@@ -21,7 +21,7 @@ class Form extends PureComponent {
         <button onClick={ this.props.onStop }>Stop</button>
         <div>Entered text: { this.props.text }</div>
       </div>
-    );
+    )
   }
 }
 

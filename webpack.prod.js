@@ -1,23 +1,23 @@
-const webpack = require('webpack')
-const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path               = require('path')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const ExtractTextPlugin  = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: [
     'babel-polyfill',
-    './src/index.js'
+    './src/app/index.js',
   ],
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build')
+    path: path.resolve(__dirname, 'src/build'),
   },
   module: {
     rules: [
       {
         test: /\.(es6?|jsx?)$/,
         exclude: /(node_modules)/,
-        include: [ /src/ ],
-        loader: ['babel-loader'],
+        include: [ /src\/app/ ],
+        loader: 'babel-loader',
       }, {
         test: /\.s?css$/,
         exclude: /module\.scss$/,
@@ -27,15 +27,15 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                importLoaders: 1
-              }
+                importLoaders: 1,
+              },
             },
-            { loader: 'postcss-loader' }
-          ]
-        })
+            { loader: 'postcss-loader' },
+          ],
+        }),
       }, {
         test: /module\.s?css$/,
-        include: [ /src/ ],
+        include: [ /src\/app/ ],
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -44,21 +44,22 @@ module.exports = {
               options: {
                 modules: true,
                 localIdentName: '[path][name]-[local]',
-                importLoaders: 1
-              }
+                importLoaders: 1,
+              },
             },
-            { loader: 'postcss-loader' }
-          ]
-        })
-      }
-    ]
+            { loader: 'postcss-loader' },
+          ],
+        }),
+      },
+    ],
   },
   plugins: [
+    new CleanWebpackPlugin('src/build'),
     new ExtractTextPlugin('styles.css'),
   ],
   resolve: {
     alias: {
-      app: path.resolve(__dirname, './src/')
-    }
+      app: path.resolve(__dirname, './src/app/'),
+    },
   },
-};
+}

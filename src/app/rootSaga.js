@@ -1,4 +1,4 @@
-import { takeEvery, throttle, call, put, select } from 'redux-saga/effects'
+import { takeEvery, put } from 'redux-saga/effects'
 import { RESET, changeText } from 'app/otherReducerShit'
 
 function* resetFormSaga() {

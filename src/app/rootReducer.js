@@ -25,5 +25,5 @@ export default typeToReducer({
     ...state,
     isFetching: false,
     text: 'mi 1',
-  })
+  }),
 }, initialState)

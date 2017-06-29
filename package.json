@@ -1,15 +1,17 @@
 {
-  "name": "webtycoon",
-  "version": "1.0.0",
-  "description": "",
+  "name": "another-one-rrr",
+  "version": "0.0.1",
+  "description": "another one react redux react-router boilerplate",
   "main": "index.js",
   "scripts": {
     "build": "webpack -p --env=prod",
-    "dev": "webpack-dev-server --hot --history-api-fallback --open --env=dev",
+    "start": "node server.js",
+    "dev": "webpack-dev-server --open --env=dev",
+    "lint": "eslint . --ext .js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "uCoz",
-  "license": "ISC",
+  "author": "Daniil Manevich",
+  "license": "MIT",
   "dependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
@@ -21,9 +23,16 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "classnames": "^2.2.5",
+    "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
     "history": "^4.6.3",
+    "js-base64": "^2.1.9",
+    "koa": "^2.3.0",
+    "koa-send": "^4.1.0",
+    "koa-static": "^3.0.0",
+    "locate-path": "^2.0.0",
+    "nodemon": "^1.11.0",
     "postcss": "^6.0.2",
     "postcss-advanced-variables": "^1.2.2",
     "postcss-color-function": "^4.0.0",
@@ -50,6 +59,10 @@
     "webpack": "^3.0.0"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.1.1",
+    "eslint-loader": "^1.8.0",
+    "eslint-plugin-react": "^7.1.0",
     "webpack-dev-server": "^2.5.0"
   }
 }

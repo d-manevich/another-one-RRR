@@ -16,5 +16,5 @@ module.exports = {
     'postcss-media-minmax': {},
     'autoprefixer': {},
     'cssnano': { zindex: false },
-  }
+  },
 }

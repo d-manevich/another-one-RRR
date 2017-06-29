@@ -5,7 +5,7 @@ export const STOP = 'STOP'
 
 export const changeText = text => ({
   type: CHANGE_TEXT,
-  payload: { text }
+  payload: { text },
 })
 
 export const onSend = () => ({ type: SEND })
